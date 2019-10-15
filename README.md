@@ -1,8 +1,8 @@
 # Fatboy
-** *About the game:* **
+***About the game:***
 Second Unity 2D project, Fatboy is a pointy-move-it-grab-it-miss-it kind of game for Android devices. The plot is unknown so far but could be added later.
 
-***Main game loop mechanic:*  **
+***Main game loop mechanic:***
 Things drop from the top of the screen. You can move your character left to right and right to left by touch (drag or point). When you hit the falling items, you either:
 - grow
 - shrink
