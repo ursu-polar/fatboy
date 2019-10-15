@@ -31,6 +31,7 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 
 ### fatboy_1.2
 - added end game area
+- added GlobalObject
 - added Begin game  & End game Scene screens
 - added Begin game button
 - added End game Retry and Menu buttons
@@ -55,4 +56,4 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - decrease change of spawning decreaser correlated with gameLevel(spawn interval)
 - decrease change of spawning bonus 
 - decrease bonus size reduction from reset to initial size to half the size (needs improvement)
-
+- some code refactoring and cleaning
