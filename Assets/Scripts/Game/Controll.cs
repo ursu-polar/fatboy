@@ -3,44 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+    /// <summary>
+    /// Move player to touch position
+    /// </summary>
 public class Controll : MonoBehaviour
 {
-    public float smoothTime = 0.3F;
-    
+   
+    /************************* VARIABLES ****************************/
+    //PUBLIC
+    public float smoothTime = 0.3F; //smooth the movin of the player on screen -> the smaller, the faster
+                                    //could be use for a damageEnemy that makes you move slower?
+    public Player player; //well, player
 
-    private float ScreenWidth;   
-    private Vector3 velocity = Vector3.zero;
-    private Vector3 playerPosScreen;
-    private Vector3 wrld;
+    //PRIVATE
+    private float ScreenWidth; //selfexplained
+    private Vector3 velocity = Vector3.zero; //selfexplained
+    private Vector3 playerPosScreen; //position of the player on the screen
+    private Vector3 WORLD; //reference to Camera Screen To World Position
+    /*********************** END OF VARIABLES ***********************/
 
-    public Player player;
-
- 
-
-    // Start is called before the first frame update
     void Start()
     {
         ScreenWidth = Screen.width;
-        //playerBody = player.GetComponent<Rigidbody2D>();
 
-        wrld = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f));
+        WORLD = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f));
 
         player.GetHalfSize();
     }
 
    
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0) || Input.touchCount > 0)
         {
             Follow();
             Clamp();
-
-
         }
     }
 
+    /// <summary>
+    /// Move player to touch position
+   /// </summary>
     private void Follow() {
         Vector3 screenPos = Input.mousePosition;
         screenPos.z = 10.0f;
@@ -51,33 +54,38 @@ public class Controll : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, newPos, ref velocity, smoothTime);
     }
 
+    /// <summary>
+    /// Clamp the player in the ScreenWidth
+    /// </summary>
     public void Clamp() {
-        //Bound
-
         //Horizontal
         playerPosScreen = transform.position;
-        if (playerPosScreen.x >= (wrld.x - player.GetHalf_szX()))
+        if (playerPosScreen.x >= (WORLD.x - player.GetHalf_szX()))
         {
-            playerPosScreen.x = wrld.x - player.GetHalf_szX();
+            playerPosScreen.x = WORLD.x - player.GetHalf_szX();
             transform.position = playerPosScreen;
         }
-        if (playerPosScreen.x <= -(wrld.x - player.GetHalf_szX()))
+        if (playerPosScreen.x <= -(WORLD.x - player.GetHalf_szX()))
         {
-            playerPosScreen.x = -(wrld.x - player.GetHalf_szX());
+            playerPosScreen.x = -(WORLD.x - player.GetHalf_szX());
             transform.position = playerPosScreen;
         }
 
+      
+        //Commented because it can not go down, and at the top will trigger the end game
+
         //Vertical
-        //print(playerPosScreen.y + " | " + (wrld.y - half_szY));
-        //if (playerPosScreen.y >= (wrld.y - half_szY))
-        //{
-        //    playerPosScreen.y = wrld.y;
-        //    transform.position = playerPosScreen;
-        //}
-        //if (playerPosScreen.y <= -(wrld.y + half_szY))
-        //{
-        //    playerPosScreen.y = -wrld.y;
-        //    transform.position = playerPosScreen;
-        //}
+        /*
+        print(playerPosScreen.y + " | " + (wrld.y - half_szY));
+        if (playerPosScreen.y >= (wrld.y - half_szY))
+        {
+            playerPosScreen.y = wrld.y;
+            transform.position = playerPosScreen;
+        }
+        if (playerPosScreen.y <= -(wrld.y + half_szY))
+        {
+            playerPosScreen.y = -wrld.y;
+            transform.position = playerPosScreen;
+        }*/
     }
 }

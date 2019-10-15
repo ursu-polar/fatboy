@@ -78,9 +78,8 @@
     <Compile Include="Assets\Scripts\GameOver\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\GameOver\RedirectButtons.cs" />
     <Compile Include="Assets\Scripts\GlobalObject.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
-    <None Include="Assets\PNGS\glowing-fractal-grid-wave-background\License premium.txt" />
-    <None Include="Assets\PNGS\glowing-fractal-grid-wave-background\Fonts.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -88,12 +87,10 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\PNGS\glowing-fractal-grid-wave-background\License free.txt" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\PNGS\glowing-fractal-grid-wave-background\retro-futuristic-landscape-background-with-sun\License premium.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -102,39 +99,38 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\PNGS\glowing-fractal-grid-wave-background\retro-futuristic-landscape-background-with-sun\License free.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -308,7 +304,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/ionel.ciresica/fatboy/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>D:/ionut/GITHUB/fatboy_game/fatboy/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

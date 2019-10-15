@@ -21,7 +21,7 @@ TagManager:
   - bg
   - game
   - gameOver
-  - 
+  - quitDialog
   - 
   - 
   - 
@@ -51,4 +51,7 @@ TagManager:
     locked: 0
   - name: game
     uniqueID: 1830534867
+    locked: 0
+  - name: quitDialog
+    uniqueID: 4013140663
     locked: 0

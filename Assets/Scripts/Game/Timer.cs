@@ -3,24 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Timer class
+/// </summary>
 public class Timer : MonoBehaviour
 {
-
+    /************************* VARIABLES ****************************/
+    //PUBLIC
     public TextMeshProUGUI timerText;
 
+    //PRIVATE
     float minutes = 0f;
     float seconds = 0f;
     float milliseconds = 0f;
     string minutesS = "";
     string secondsS = "";
     string millisecondsS = "";
-
-    public GameObject gameManager;
+    private GameObject gameManager;
     private GameManager GM;
+    /*********************** END OF VARIABLES ***********************/
 
-    private void Awake()
+    private void Start()
     {
-
+        gameManager = GameObject.Find("GameManager");
         GM = gameManager.GetComponent<GameManager>();
     }
 
@@ -29,7 +34,10 @@ public class Timer : MonoBehaviour
         UpdateTimerUI();
     }
 
-    public void UpdateTimerUI()
+    /// <summary>
+    /// Updates the UI Timer if GM.canSpawn = true;
+    /// </summary>
+    private void UpdateTimerUI()
     {
         if (!GM.canSpawn) return;
         if (milliseconds >= 100)

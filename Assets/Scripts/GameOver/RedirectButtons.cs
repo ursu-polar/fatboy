@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Redirect to Menu or restart the game
+/// </summary>
 public class RedirectButtons : MonoBehaviour
 {
     public void RestartGame()
     {
-
-        print("RestartGame");
         SceneManager.LoadScene(1);
     }
     public void MenuScreen()
     {
-        print("MenuScreen");
         SceneManager.LoadScene(0);
     }
 }

@@ -4,60 +4,89 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Game manager for the game, doh
+/// </summary>
 public class GameManager : MonoBehaviour
 {
+    /************************* VARIABLES ****************************/
+    //PUBLIC
+    public TextMeshProUGUI Scor; //Score text
+    public TextMeshProUGUI GameOverText; //GameOver text
+    public TextMeshProUGUI LevelSpeed; //Level Text (actualy gravity *10)
+    public bool canSpawn = true; //Flag that will stop spawning of food items
+    public float Gravity; //gravity of food. used to increase speed
+    //PRIVATE
+    private int scor = 0; //the score
+    private GlobalObject GO; //GlobalObject
+    private SpawnManager spawnerManager; //The spawner manager that spawns the food items
 
-    private GlobalObject GO;
-    public SpawnManager spawnerManager;
-    public TextMeshProUGUI Scor;
-    public TextMeshProUGUI GameOverText;
-    public TextMeshProUGUI LevelSpeed;
-    private int scor = 0;
+    private float gravitySpeedIncrement = 0.1F; //it will be added to Gravity so the food will fall faster
+    private Hashtable levelToSpawnTable; //keep the correlation betwen the level and the spawn delay
 
-    public bool canSpawn = true;
+    private IEnumerator GameOverDelayCorotine; //Adds a delay before changing sceene to GameOver
+    private IEnumerator IncreaseDifficultyCorotine; //Increase gravity over time
+    private int increaseDifficultyDelay = 10; //will increment increase difficulty every 10 seconds
+                                               //maybe not a fix value?
 
-    public float Gravity;
-
-    private float difficultyIncrement = 0.1F;
-
-    private IEnumerator GameOverDelayCorotine;
-    private IEnumerator IncreaseDifficultyCorotine;
-
-
-
-
-    // Start is called before the first frame update
+    /*********************** END OF VARIABLES ***********************/
+   
     void Start()
     {
+        //GlobalObject reference
+        GO = GlobalObject.Instance;
+        GO.InitQuitDialog();
+
+        GameObject _spawnM = GameObject.Find("SpawnManager");
+        spawnerManager = _spawnM.GetComponent<SpawnManager>();
         spawnerManager.StartSpawning();
         GameOverText.alpha = 0;
        
-        GO = GlobalObject.Instance;
-
+        DefineLevelToSpawnHash();
         IncreaseDifficulty();
     }
 
+    /// <summary>
+    /// Set the score
+    /// </summary>
+    /// <param name="value">integer</param>
     public void SetScore(int value) {
         scor = value;
         UpdateScore();
     }
 
+    /// <summary>
+    /// Increase the score with given value
+    /// </summary>
+    /// <param name="value">integer</param>
     public void IncreaseScore(int value)
     {
         scor += value;
         UpdateScore();
     }
 
+    /// <summary>
+    /// Double the score for Bonus Food
+    /// </summary>
     public void DoubleScore() {
         if (scor == 0) scor = 50; else scor *= 2;
         UpdateScore();
     }
 
+    /// <summary>
+    /// Updates the score in the scene and in the GO
+    /// </summary>
     private void UpdateScore() {
         Scor.text = scor.ToString();
         GO.score = scor;
     }
 
+    /// <summary>
+    /// Prepare GameOver
+    /// - set False canSpawn boolean
+    /// - set visible GameOver text
+    /// - start corotine with 3 seconds delay to GameOver scene
+    /// </summary>
     public void GameOver() {
         canSpawn = false;
         GameOverText.alpha = 1;
@@ -66,25 +95,64 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameOverDelayCorotine);
     }
 
+    /// <summary>
+    ///  Change scene to GameOver in 3 seconds
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ChangeSceneToEndGame() {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(2);
     }
 
+    /// <summary>
+    /// Keep the correlation betwen the level and the spawn delay
+    /// </summary>
+    private void DefineLevelToSpawnHash() {
+        levelToSpawnTable = new Hashtable(){
+            {"4", 1.8f },
+            {"8", 1.6f },
+            {"12", 1.4f },
+            {"16", 1.0f },
+            {"18", 0.9f },
+            {"20", 0.8f },
+            {"22", 0.7f },
+            {"24", 0.6f },
+            {"26", 0.5f },
+            {"27", 0.4f },
+            {"28", 0.3f },
+            {"29", 0.2f },
+            {"30", 0.1f },
+        };
+    }
+
+    /// <summary>
+    /// Declare corotine
+    /// </summary>
     private void IncreaseDifficulty() {
         IncreaseDifficultyCorotine = IncreaseGravity();
         StartCoroutine(IncreaseDifficultyCorotine);
     }
 
+
+    /// <summary>
+    /// Increase gravity over time - increaseDifficultyDelay with gravitySpeedIncrement
+    /// Sets the Level by  Mathf.Round(Gravity * 10)
+    /// Checks the levelToSpawnTable for level and if found sets the new (smaller) spawn interval
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator IncreaseGravity() {
         while (canSpawn)
         {
-            Gravity += difficultyIncrement;
-            LevelSpeed.text = (Gravity * 10).ToString();
-            yield return new WaitForSeconds(10);
+            Gravity += gravitySpeedIncrement;
+            string _level = Mathf.Round(Gravity * 10).ToString();
+            LevelSpeed.text = _level;
+
+            //increase spawn rate
+            if (levelToSpawnTable.Contains(_level)) {
+                print("Spawn Speed: " +levelToSpawnTable[_level]);
+                spawnerManager.SetSpawnInterval((float)levelToSpawnTable[_level]);
+            }
+            yield return new WaitForSeconds(increaseDifficultyDelay);
         }
     }
-
-
-
 }

@@ -3,62 +3,78 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-
+/// <summary>
+/// The Player class
+/// </summary>
 public class Player : MonoBehaviour
 {
-    public GameObject gameManager;
+    /************************* VARIABLES ****************************/
+    //PUBLIC
+    public float scaleFactor; //The base scale factor for eating Food
+                              //The other scales (Enemy, Life) (except Bonus) are based on this
+    public float scaleSpeed; //How fast the player will scale
+    //PRIVATE
+    private GameObject gameManager;
     private GameManager GM;
-
-    public float scaleFactor;
-    public float scaleSpeed = 1f;
-
-    private float half_szX;
-    private float half_szY;
-
-    private Controll controll;
-
-    
+    private float half_szX; //gets the half size of the player to calculate clamping in Controll
+    private float half_szY; //gets the half size of the player to calculate clamping in Controll
+    private Controll controll; //reference to Controll class
+    private int enemyPoints; //noumber of points awarded when player eats an food Enemy
+    private int lifePoints; //noumber of points awarded when player eats an food Life
+    //Maybe change the names? They are Tags to, so do it sooner than later
+    /*********************** END OF VARIABLES ***********************/
 
     private void Start()
     {
-        controll = gameObject.GetComponent<Controll>();
+        gameManager = GameObject.Find("GameManager");
         GM = gameManager.GetComponent<GameManager>();
+
+        controll = gameObject.GetComponent<Controll>();
+
+        scaleFactor = 0.2f;
+        scaleSpeed = 1f;
+
+        enemyPoints = 1;
+        lifePoints = 10;
     }
 
+    /// <summary>
+    /// Player eats food. What to do?
+    /// Here is the GameOver detection, if Death gameObj is touched
+    /// </summary>
+    /// <param name="other">GameObject with tags (Death,Enemy,Life,Bonus)</param>
     void OnCollisionEnter2D(Collision2D other)
     {
-
-        if(other.gameObject.tag == "Death")
+        if(other.gameObject.tag == "Death") //touched the GameOver object, call StopGame and exit
         {
-            print("game over");
             StopGame();
             return;
         }
 
+        //Other Object is Food so destroy it
         Destroy(other.gameObject);
 
+        //Depending on what it hits
         switch (other.gameObject.tag)
         {
             case "Enemy":
                 EnemyHit();
-                GM.IncreaseScore(1);
+                GM.IncreaseScore(enemyPoints); 
                 break;
             case "Life":
                 LifeHit();
-                GM.IncreaseScore(5);
+                GM.IncreaseScore(lifePoints);
                 break;
             case "Bonus":
                 BonusHit();
                 GM.DoubleScore();
                 break;
-
         }
-
- 
-        //Scor.text = scor.ToString();
-
     }
 
+    /// <summary>
+    /// Enemy Food Hit
+    /// </summary>
     private void EnemyHit()
     {
         transform.DOScale(new Vector3(transform.localScale.x + scaleFactor, transform.localScale.y + scaleFactor), scaleSpeed)
@@ -69,6 +85,9 @@ public class Player : MonoBehaviour
             });
     }
 
+    /// <summary>
+    /// Life Food Hit
+    /// </summary>
     private void LifeHit()
     {
         float scaleBonus = scaleFactor * Random.Range(4, 10) /10;
@@ -76,6 +95,7 @@ public class Player : MonoBehaviour
         float scaleY;
         if (transform.localScale.x - scaleFactor * scaleBonus < 1)
         {
+            //The scale will be smaller than the minimum and initial 1 so set it to 1
             scaleX = scaleY = 1f;
         } else
         {
@@ -89,30 +109,37 @@ public class Player : MonoBehaviour
             });
     }
 
+    /// <summary>
+    /// Bonus Food hit
+    /// </summary>
     private void BonusHit()
     {
-        transform.DOScale(new Vector3(1f, 1f), scaleSpeed)
+        transform.DOScale(new Vector3(transform.localScale.x / 2, transform.localScale.y / 2), scaleSpeed)
             .OnUpdate(() => {
                 GetHalfSize();
                 controll.Clamp();
             });
     }
 
-
+    /// <summary>
+    /// Get the halfSize of player, needed in Controll to clamp
+    /// </summary>
     public void GetHalfSize()
     {
         half_szX = transform.GetChild(0).GetComponent<Renderer>().bounds.size.x / 2;
         half_szY = transform.GetChild(0).GetComponent<Renderer>().bounds.size.y / 2;
     }
 
+    //why are public?
     public float GetHalf_szX() { return half_szX; }
     public float GetHalf_szY() { return half_szY; }
 
+    /// <summary>
+    /// Stop the game.
+    /// </summary>
     private void StopGame() {
         GM.Gravity = 0;
-        GM.canSpawn = false;
         GM.GameOver();
     }
-
-
+    
 }
