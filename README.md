@@ -50,6 +50,9 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - created THIS file
 
 ### fatboy_1.3.2
-- added quit dialog box (quit/cancel)
+- added quit dialog box (quit/cancel) in all scenes
 - increase spawn rate in correlation with gameLevel (gravity speed)
+- decrease change of spawning decreaser correlated with gameLevel(spawn interval)
+- decrease change of spawning bonus 
+- decrease bonus size reduction from reset to initial size to half the size (needs improvement)
 
