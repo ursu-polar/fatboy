@@ -40,6 +40,7 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - added Highscore to Menu and Endgame
 - implemented the Highscore, not it keeps the highscore
 - tweaked the scoring points. needs more tweaking
+- added gameLevel (actualy the gravity speed)
 - thinking of adding times to highscore
 
 ### fatboy_1.3.1
@@ -50,4 +51,5 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 
 ### fatboy_1.3.2
 - added quit dialog box (quit/cancel)
+- increase spawn rate in correlation with gameLevel (gravity speed)
 
