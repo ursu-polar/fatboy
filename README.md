@@ -48,4 +48,6 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - created GITHUB project
 - created THIS file
 
+### fatboy_1.3.2
+- added quit dialog box (quit/cancel)
 
