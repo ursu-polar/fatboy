@@ -57,3 +57,9 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - decrease change of spawning bonus 
 - decrease bonus size reduction from reset to initial size to half the size (needs improvement)
 - some code refactoring and cleaning
+
+### fatboy_1.3.3
+- new background and new theme? space monster eater?
+- background star spawner
+- new random player face from 4 templates
+- random grow for eating food (1-5 vs statis 2)
