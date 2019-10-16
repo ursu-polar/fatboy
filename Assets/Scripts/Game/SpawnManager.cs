@@ -12,17 +12,15 @@ public class SpawnManager : MonoBehaviour
     public float spawnLocationY;
 
     //PRIVATE
-    private GameObject gameManager;
     private GameManager GM;
     private float spawnInterval;
     private GameObject newSpawn;
     private IEnumerator spawnCorotine;
     /*********************** END OF VARIABLES ***********************/
 
-    private void Start()
+    private void Awake()
     {
-        gameManager = GameObject.Find("GameManager");
-        GM = gameManager.GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         spawnInterval = 2;
     }
 

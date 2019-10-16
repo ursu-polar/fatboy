@@ -19,14 +19,12 @@ public class Timer : MonoBehaviour
     string minutesS = "";
     string secondsS = "";
     string millisecondsS = "";
-    private GameObject gameManager;
     private GameManager GM;
     /*********************** END OF VARIABLES ***********************/
 
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        GM = gameManager.GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()

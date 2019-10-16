@@ -6,10 +6,13 @@ ScriptsOnlyBuild:
     - GameManager
     - GameOverManager
     - GlobalObject
+    - MenuButtons
     - MenuManager
     - Player
     - RedirectButtons
     - SpawnManager
+    - Star
+    - StarGenerator
     - Timer
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
@@ -25,13 +28,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -65,35 +61,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9786}
+      Script: {instanceID: 9686}
     - Class: 114
-      Script: {instanceID: 9988}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10042}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10974}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 11224}
+      Script: {instanceID: 10688}
     - Class: 114
-      Script: {instanceID: 11594}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 21720}
+      Script: {instanceID: 10914}
     - Class: 114
-      Script: {instanceID: 22876}
+      Script: {instanceID: 10992}
     - Class: 114
-      Script: {instanceID: 29274}
+      Script: {instanceID: 11100}
     - Class: 114
-      Script: {instanceID: 34042}
+      Script: {instanceID: 11108}
     - Class: 114
-      Script: {instanceID: 38352}
+      Script: {instanceID: 11166}
     - Class: 114
-      Script: {instanceID: 58090}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 68432}
+      Script: {instanceID: 11544}
+    - Class: 114
+      Script: {instanceID: 27990}
+    - Class: 114
+      Script: {instanceID: 27996}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -128,27 +128,27 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9786}
+      Script: {instanceID: 9686}
     - Class: 114
-      Script: {instanceID: 9988}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10492}
     - Class: 114
-      Script: {instanceID: 10974}
+      Script: {instanceID: 10688}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 10858}
     - Class: 114
-      Script: {instanceID: 11224}
+      Script: {instanceID: 10914}
     - Class: 114
-      Script: {instanceID: 11594}
+      Script: {instanceID: 10992}
     - Class: 114
-      Script: {instanceID: 51746}
+      Script: {instanceID: 11108}
     - Class: 114
-      Script: {instanceID: 58090}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 62270}
+      Script: {instanceID: 11544}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,33 +191,35 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9786}
+      Script: {instanceID: 9686}
     - Class: 114
-      Script: {instanceID: 9988}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10406}
+      Script: {instanceID: 10322}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10974}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 10988}
+      Script: {instanceID: 10678}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 10688}
     - Class: 114
-      Script: {instanceID: 11224}
+      Script: {instanceID: 10914}
     - Class: 114
-      Script: {instanceID: 11390}
+      Script: {instanceID: 10928}
     - Class: 114
-      Script: {instanceID: 11594}
+      Script: {instanceID: 10992}
     - Class: 114
-      Script: {instanceID: 28658}
+      Script: {instanceID: 11108}
     - Class: 114
-      Script: {instanceID: 51046}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 58090}
+      Script: {instanceID: 11340}
+    - Class: 114
+      Script: {instanceID: 11544}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -351,6 +353,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 4cc91bcd5f8031146346455bb05eb331
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controll
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -393,10 +401,22 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Food
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 325d8c03d19f2b739c465974f0e3e4b8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnManager
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -435,6 +455,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RedirectButtons
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -445,6 +471,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 704dcd31abc789439bc3f3cd10b58c2b
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenComponent
+  - hash:
+      serializedVersion: 2
+      Hash: 9a65634b0f2713c6c2d2dd4d09159a88
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenSettings
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -459,10 +497,28 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 7c0288516bc17c4c3c410cf229377f7b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuButtons
+  - hash:
+      serializedVersion: 2
       Hash: 516824a435828eadd660ef2f1658a48e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 59d02390641607ec9d74137a9855a968
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   - hash:
       serializedVersion: 2
       Hash: 92da9881aed190e8bb74661bcd74aa2c
@@ -475,6 +531,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: b007a6dbec706b4874380a3cf9edcd6e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameOverManager
   - hash:
       serializedVersion: 2
       Hash: 12e64d607873da15ad3f833620350d51
@@ -525,6 +587,18 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: b262eefe4d8e49c395ab25ce28eae3cd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GlobalObject
+  - hash:
+      serializedVersion: 2
+      Hash: cd49b1503010596ab22eac929ed90407
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player
+  - hash:
+      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -535,6 +609,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 11567014f6f3c955343951c957c1e68c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -651,79 +731,25 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 250c077e7847367b31dda2ef3b5e60c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Food
+    className: PlayerController
   - hash:
       serializedVersion: 2
-      Hash: 4cc91bcd5f8031146346455bb05eb331
+      Hash: 891899a532e66a7cf8356a559516f179
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Controll
-  - hash:
-      serializedVersion: 2
-      Hash: 704dcd31abc789439bc3f3cd10b58c2b
-    assemblyName: DOTween.dll
-    namespaceName: DG.Tweening.Core
-    className: DOTweenComponent
-  - hash:
-      serializedVersion: 2
-      Hash: 9a65634b0f2713c6c2d2dd4d09159a88
-    assemblyName: DOTween.dll
-    namespaceName: DG.Tweening.Core
-    className: DOTweenSettings
-  - hash:
-      serializedVersion: 2
-      Hash: 8b9501ccdeea9242b509d997dad3a816
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameManager
-  - hash:
-      serializedVersion: 2
-      Hash: 46802fbac24578e2e163b52a06c5d0f0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpawnManager
-  - hash:
-      serializedVersion: 2
-      Hash: 14770f1ee52f5eab04ba10897cfa41ff
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Player
-  - hash:
-      serializedVersion: 2
-      Hash: 7c0288516bc17c4c3c410cf229377f7b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuManager
-  - hash:
-      serializedVersion: 2
-      Hash: b007a6dbec706b4874380a3cf9edcd6e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameOverManager
-  - hash:
-      serializedVersion: 2
-      Hash: b262eefe4d8e49c395ab25ce28eae3cd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GlobalObject
+    className: StarGenerator
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: RedirectButtons
-  - hash:
-      serializedVersion: 2
-      Hash: 66f135817546368c285fabacecd27372
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Timer
+    className: Star
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/ionel.ciresica/fatboy/fatboy_1.3.2.apk
+  playerPath: D:/ionut/GITHUB/fatboy_game/fatboy_builds/fatboy_1.3.3.apk

@@ -12,7 +12,6 @@ public class Food : MonoBehaviour
 
 
     //PRIVATE
-    private GameObject gameManager; 
     private GameManager GM; 
     private float rotationsPerMinute = 10.0f; //speed of Food rotation
     /*********************** END OF VARIABLES ***********************/
@@ -20,8 +19,7 @@ public class Food : MonoBehaviour
     void Start()
     {
         //GameManager reference
-        gameManager = GameObject.Find("GameManager");
-        GM = gameManager.GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         //Ignore Game Over Bar
         GameObject death = GameObject.Find("Death");

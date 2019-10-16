@@ -9,6 +9,7 @@ TagManager:
   - Life
   - Bonus
   - Death
+  - Floor
   layers:
   - Default
   - TransparentFX

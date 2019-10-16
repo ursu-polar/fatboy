@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
                               //The other scales (Enemy, Life) (except Bonus) are based on this
     public float scaleSpeed; //How fast the player will scale
     //PRIVATE
-    private GameObject gameManager;
     private GameManager GM;
     private float half_szX; //gets the half size of the player to calculate clamping in Controll
     private float half_szY; //gets the half size of the player to calculate clamping in Controll
@@ -26,18 +25,30 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        GM = gameManager.GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         controll = gameObject.GetComponent<Controll>();
 
-        scaleFactor = 0.2f;
+        
         scaleSpeed = 1f;
 
         enemyPoints = 1;
         lifePoints = 10;
+
+        SetFace();
     }
 
+    /// <summary>
+    /// Choose the face from the 4 faces
+    /// </summary>
+    private void SetFace() {
+        //hide all the faces
+        int children = transform.childCount;
+        int choice = Random.Range(1, 4);
+        for (int i = 0; i < children; ++i) {
+            if(i != choice) transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
     /// <summary>
     /// Player eats food. What to do?
     /// Here is the GameOver detection, if Death gameObj is touched
@@ -52,7 +63,11 @@ public class Player : MonoBehaviour
         }
 
         //Other Object is Food so destroy it
-        Destroy(other.gameObject);
+        if(other.gameObject.tag != "Floor")  Destroy(other.gameObject);
+
+        //Set a random scale factor
+        scaleFactor = (float)Random.Range(1, 5) / 10;
+        print(scaleFactor);
 
         //Depending on what it hits
         switch (other.gameObject.tag)
