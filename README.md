@@ -75,3 +75,4 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - background star spawner
 - new random player face from 4 templates
 - random grow for eating food (1-5 vs statis 2)
+- GIT rep going public
