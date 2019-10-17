@@ -24,6 +24,7 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - [ ] UI animations
 - [ ] add someking of powerups in slots(n per game?)(ex: show when/where a Bonus food will appear like a lightnigh bolt or something)
 - [ ] add Points to unlock powerups 
+- [ ] add levels and infinite play game
 ------------
 
 
