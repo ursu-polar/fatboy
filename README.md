@@ -80,3 +80,4 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 
 ### fatboy_1.3.4
 - added particle trail on player movement (needs improvment)
+- added background visual breathing effect
