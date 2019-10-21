@@ -13,13 +13,18 @@ public class Controll : MonoBehaviour
     //PUBLIC
     public float smoothTime = 0.3F; //smooth the movin of the player on screen -> the smaller, the faster
                                     //could be use for a damageEnemy that makes you move slower?
-    public Player player; //well, player
-
+    public GameObject _player; //well, player
+    
+    
     //PRIVATE
     private float ScreenWidth; //selfexplained
     private Vector3 velocity = Vector3.zero; //selfexplained
     private Vector3 playerPosScreen; //position of the player on the screen
     private Vector3 WORLD; //reference to Camera Screen To World Position
+    private Player player;
+    private ParticleSystem trail;
+    Vector3 prevPos;
+
     /*********************** END OF VARIABLES ***********************/
 
     void Start()
@@ -28,16 +33,43 @@ public class Controll : MonoBehaviour
 
         WORLD = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f));
 
+        player = _player.GetComponent<Player>();
         player.GetHalfSize();
+
+        trail = GameObject.Find("particleSystem").GetComponentInChildren<ParticleSystem>();
+ 
     }
 
    
     void Update()
     {
+        
         if (Input.GetMouseButton(0) || Input.touchCount > 0)
         {
+
+            Vector3 dir = (transform.position - prevPos);
+            prevPos = transform.position;
+            
+            if (dir.x > 0) {
+                trail.transform.localPosition = new Vector3(-0.3f, 0.02f, 1f);
+                trail.transform.rotation = Quaternion.Euler(1f, -90f, 1f );
+                
+            }
+            else if (dir.x < 0)
+            {
+                trail.transform.localPosition = new Vector3(0.3f, 0.02f, 1f);
+                trail.transform.rotation = Quaternion.Euler(1f,90f, 1f);
+                
+            }
+        
+            if(dir.x != 0) trail.enableEmission = true;
+            else trail.enableEmission = false;
             Follow();
             Clamp();
+        }
+        else
+        {
+            trail.enableEmission = false;
         }
     }
 
@@ -52,6 +84,8 @@ public class Controll : MonoBehaviour
         newPos.x = worldPos.x;
         // Smoothly move the camera towards that target position
         transform.position = Vector3.SmoothDamp(transform.position, newPos, ref velocity, smoothTime);
+
+
     }
 
     /// <summary>

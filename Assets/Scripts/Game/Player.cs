@@ -46,7 +46,10 @@ public class Player : MonoBehaviour
         int children = transform.childCount;
         int choice = Random.Range(1, 4);
         for (int i = 0; i < children; ++i) {
-            if(i != choice) transform.GetChild(i).gameObject.SetActive(false);
+            if (i != choice)
+            {
+                if(transform.GetChild(i).gameObject.tag != "particles") transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
     /// <summary>

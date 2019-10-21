@@ -69,6 +69,7 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\Game\BgCloudsBreath.cs" />
     <Compile Include="Assets\Scripts\Game\Controll.cs" />
     <Compile Include="Assets\Scripts\Game\Food.cs" />
     <Compile Include="Assets\Scripts\Game\GameManager.cs" />
