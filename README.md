@@ -27,4 +27,5 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - [ ] add levels and infinit play game
 ------------
 
+[Version history](https://github.com/ursu-polar/fatboy/blob/master/VERSION.MD)
 
