@@ -89,3 +89,7 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 ### fatboy_1.3.4.1 & fatboy_1.3.4.2
 - fixed the lost particle trail and background breath effect
 - installed local history file management for Visual Studio
+
+### fatboy_1.3.4.3
+- added gameState Pause when eating Bonus - will pause the game so the shrking could be finished and then resume the game
+- added gameState Slow when eating Life - not working yet - it should slow down all the falloing Food items and then resume
