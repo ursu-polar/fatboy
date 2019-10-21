@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private GlobalObject GO; //GlobalObject
     private SpawnManager spawnerManager; //The spawner manager that spawns the food items
 
-    private float gravitySpeedIncrement = 0.1F; //it will be added to Gravity so the food will fall faster
+    private float gravitySpeedIncrement = 0.05F; //it will be added to Gravity so the food will fall faster
     private Hashtable levelToSpawnTable; //keep the correlation betwen the level and the spawn delay
 
     private IEnumerator GameOverDelayCorotine; //Adds a delay before changing sceene to GameOver
@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
         spawnerManager = _spawnM.GetComponent<SpawnManager>();
         spawnerManager.StartSpawning();
         GameOverText.alpha = 0;
+
+        Gravity = 1F;
        
         DefineLevelToSpawnHash();
         IncreaseDifficulty();
@@ -110,18 +112,18 @@ public class GameManager : MonoBehaviour
     private void DefineLevelToSpawnHash() {
         levelToSpawnTable = new Hashtable(){
             {"4", 1.8f },
-            {"8", 1.6f },
-            {"12", 1.4f },
-            {"16", 1.0f },
-            {"18", 0.9f },
-            {"20", 0.8f },
-            {"22", 0.7f },
-            {"24", 0.6f },
-            {"26", 0.5f },
-            {"27", 0.4f },
-            {"28", 0.3f },
-            {"29", 0.2f },
-            {"30", 0.1f },
+            {"6", 1.6f },
+            {"8", 1.4f },
+            {"10", 1.0f },
+            {"12", 0.9f },
+            {"14", 0.8f },
+            {"16", 0.7f },
+            {"18", 0.6f },
+            {"20", 0.5f },
+            {"22", 0.4f },
+            {"24", 0.3f },
+            {"25", 0.2f },
+            {"26", 0.1f },
         };
     }
 

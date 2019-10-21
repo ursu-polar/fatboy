@@ -13,7 +13,6 @@ public class Food : MonoBehaviour
 
     //PRIVATE
     private GameManager GM; 
-    private float rotationsPerMinute = 10.0f; //speed of Food rotation
     /*********************** END OF VARIABLES ***********************/
     
     void Start()
@@ -26,13 +25,15 @@ public class Food : MonoBehaviour
         Collider2D foodColider = GetComponent<Collider2D>();
         Collider2D deathColider = death.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(foodColider, deathColider);
+
+        transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        SetRandomFace();
     }
 
     void FixedUpdate()
     {
-        //Rotate the food
-       GetComponent<Rigidbody2D>().gravityScale = GM.Gravity;
-       transform.Rotate(0, 0, Random.Range(10f, 30f) * rotationsPerMinute * Time.deltaTime);
+       //GetComponent<Rigidbody2D>().gravityScale = GM.Gravity; 
+       GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
     }
 
     /// <summary>
@@ -40,8 +41,35 @@ public class Food : MonoBehaviour
     /// </summary>
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Bottom") {
+        print(other.gameObject.tag);
+        if (other.gameObject.tag == "bottom") {
             Destroy(gameObject);
         }        
+    }
+
+    /// <summary>
+    /// Sets a random face for each food
+    /// </summary>
+    private void SetRandomFace() {
+        //hide all the faces
+        GameObject body = this.transform.Find("body").gameObject;
+        GameObject mouth = this.transform.Find("mouth").gameObject;
+        GameObject eyes = this.transform.Find("eyes").gameObject;
+
+        List<GameObject> bodyParts = new List<GameObject>();
+        bodyParts.Add(body);
+        bodyParts.Add(mouth);
+        bodyParts.Add(eyes);
+
+      
+        foreach (GameObject part in bodyParts)
+        {
+            int childrenLength = part.transform.childCount;
+            int choice = Random.Range(1, childrenLength);
+            for (int i = 0; i < childrenLength; ++i)
+            {
+                if (i != choice) part.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 }
