@@ -79,14 +79,20 @@ public class Player : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Enemy":
+                //Set a random scale factor
+                scaleFactor = (float)Random.Range(1, 3 - transform.localScale.x) / 10;
                 EnemyHit();
                 GM.IncreaseScore(enemyPoints); 
                 break;
             case "Life":
+                //Set a random scale factor
+                scaleFactor = (float)Random.Range(1, 5) / 10;
                 LifeHit();
                 GM.IncreaseScore(lifePoints);
                 break;
             case "Bonus":
+                //Set a random scale factor
+                scaleFactor = (float)Random.Range(1, 5) / 10;
                 BonusHit();
                 GM.DoubleScore();
                 break;

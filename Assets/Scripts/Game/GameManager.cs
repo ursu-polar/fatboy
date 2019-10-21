@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         spawnerManager.StartSpawning();
         GameOverText.alpha = 0;
 
-        Gravity = 1F;
+        Gravity = 0.5F;
         GravityState = NORMAL;
 
         DefineLevelToSpawnHash();

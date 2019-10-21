@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BgCloudsBreath
     - Controll
     - Food
     - GameManager
@@ -61,44 +62,48 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9686}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9896}
+      Script: {instanceID: 9974}
     - Class: 114
-      Script: {instanceID: 10042}
+      Script: {instanceID: 10120}
     - Class: 114
-      Script: {instanceID: 10262}
+      Script: {instanceID: 10340}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 10302}
+      Script: {instanceID: 10380}
+    - Class: 114
+      Script: {instanceID: 10448}
     - Class: 114
       Script: {instanceID: 10688}
     - Class: 114
-      Script: {instanceID: 10690}
+      Script: {instanceID: 10770}
     - Class: 114
-      Script: {instanceID: 10914}
+      Script: {instanceID: 10772}
     - Class: 114
-      Script: {instanceID: 10992}
+      Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 11100}
+      Script: {instanceID: 11182}
     - Class: 114
-      Script: {instanceID: 11108}
+      Script: {instanceID: 11190}
     - Class: 114
-      Script: {instanceID: 11166}
+      Script: {instanceID: 11248}
     - Class: 114
-      Script: {instanceID: 11172}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 11544}
+      Script: {instanceID: 11574}
     - Class: 114
-      Script: {instanceID: 27990}
-    - Class: 114
-      Script: {instanceID: 27996}
+      Script: {instanceID: 11630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -128,27 +133,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9686}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9896}
+      Script: {instanceID: 9974}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 10492}
+      Script: {instanceID: 10572}
     - Class: 114
-      Script: {instanceID: 10688}
+      Script: {instanceID: 10770}
     - Class: 114
-      Script: {instanceID: 10858}
+      Script: {instanceID: 10940}
     - Class: 114
-      Script: {instanceID: 10914}
+      Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 10992}
+      Script: {instanceID: 11190}
     - Class: 114
-      Script: {instanceID: 11108}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 11172}
-    - Class: 114
-      Script: {instanceID: 11544}
+      Script: {instanceID: 11630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,35 +194,35 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9686}
+      Script: {instanceID: 9764}
     - Class: 114
-      Script: {instanceID: 9896}
+      Script: {instanceID: 9974}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 10322}
-    - Class: 114
-      Script: {instanceID: 10590}
+      Script: {instanceID: 10400}
     - Class: 114
       Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10752}
     - Class: 114
-      Script: {instanceID: 10688}
+      Script: {instanceID: 10760}
     - Class: 114
-      Script: {instanceID: 10914}
+      Script: {instanceID: 10770}
     - Class: 114
-      Script: {instanceID: 10928}
+      Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 10992}
+      Script: {instanceID: 11010}
     - Class: 114
-      Script: {instanceID: 11108}
+      Script: {instanceID: 11074}
     - Class: 114
-      Script: {instanceID: 11172}
+      Script: {instanceID: 11190}
     - Class: 114
-      Script: {instanceID: 11340}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 11544}
+      Script: {instanceID: 11422}
+    - Class: 114
+      Script: {instanceID: 11630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -353,7 +356,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 4cc91bcd5f8031146346455bb05eb331
+      Hash: c55250fe5f454caeb1f74182aab7fb5a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controll
@@ -443,6 +446,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 891899a532e66a7cf8356a559516f179
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StarGenerator
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -483,6 +492,12 @@ ScriptsOnlyBuild:
     assemblyName: DOTween.dll
     namespaceName: DG.Tweening.Core
     className: DOTweenSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BgCloudsBreath
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -611,7 +626,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 11567014f6f3c955343951c957c1e68c
+      Hash: 67a56e36f09802dd57b1625aaf5504e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -669,6 +684,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Star
+  - hash:
+      serializedVersion: 2
+      Hash: 250c077e7847367b31dda2ef3b5e60c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerController
   - hash:
       serializedVersion: 2
       Hash: 3f52d34ea17dfc771004b80f5d492445
@@ -729,27 +756,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 250c077e7847367b31dda2ef3b5e60c5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerController
-  - hash:
-      serializedVersion: 2
-      Hash: 891899a532e66a7cf8356a559516f179
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StarGenerator
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Star
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: D:/ionut/GITHUB/fatboy_game/fatboy_builds/fatboy_1.3.3.apk
+  playerPath: D:/ionut/GITHUB/fatboy_game/fatboy_builds/fatboy_1.3.3.4.apk
