@@ -57,15 +57,15 @@
 - ~~Grow will be inversely proportional with the size so you will die slower when getting very big~~ [not implemented yet]
 
 
-### fatboy_1.3.4.1 & fatboy_1.3.4.2
+#### fatboy_1.3.4.1 & fatboy_1.3.4.2
 - fixed the lost particle trail and background breath effect
 - installed local history file management for Visual Studio
 
-### fatboy_1.3.4.3
+#### fatboy_1.3.4.3
 - added gameState Pause when eating Bonus - will pause the game so the shrking could be finished and then resume the game
 - added gameState Slow when eating Life - not working yet - it should slow down all the falloing Food items and then resume
 
-# fatboy_1.3.4.4
+#### fatboy_1.3.4.4
 - Grow will be inversely proportional with the size so you will die slower when getting very big
 - NEW BUILD
 - moved versioning to VERSION file
