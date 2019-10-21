@@ -79,8 +79,8 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - GIT rep going public
 
 ### fatboy_1.3.4
-- added particle trail on player movement (needs improvment)
-- added background visual breathing effect
+- ~~added particle trail on player movement (needs improvment)~~ [lost because f*cked up commit/pull]
+- ~~added background visual breathing effect~~ [lost because f*cked up commit/pull]
 - added Foods random faces
 - change falling implementation from Gravity to AddForce (so i could pause, slow down, rever, etc. individual Food items)
 - Grow will be inversely proportional with the size so you will die slower when getting very big
