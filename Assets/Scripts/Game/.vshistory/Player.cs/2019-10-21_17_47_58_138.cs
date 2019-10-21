@@ -21,10 +21,6 @@ public class Player : MonoBehaviour
     private int enemyPoints; //noumber of points awarded when player eats an food Enemy
     private int lifePoints; //noumber of points awarded when player eats an food Life
     //Maybe change the names? They are Tags to, so do it sooner than later
-    private float lastGravity;
-    private string NORMAL = "normal";
-    private string PAUSE = "pause";
-    private string SLOW = "slow";
     /*********************** END OF VARIABLES ***********************/
 
     private void Start()
@@ -111,7 +107,7 @@ public class Player : MonoBehaviour
     /// </summary>
     private void LifeHit()
     {
-        SlowGravit();
+        PauseGame();
         float scaleBonus = scaleFactor * Random.Range(4, 10) /10;
         float scaleX;
         float scaleY;
@@ -140,7 +136,6 @@ public class Player : MonoBehaviour
     /// </summary>
     private void BonusHit()
     {
-        PauseGame();
         float scaleBonus = scaleFactor;
         float scaleX;
         float scaleY;
@@ -159,9 +154,6 @@ public class Player : MonoBehaviour
             {
                 GetHalfSize();
                 controll.Clamp();
-            })
-            .OnComplete(() => {
-                ResumeGame();
             });
     }
 
@@ -186,24 +178,15 @@ public class Player : MonoBehaviour
         GM.GameOver();
     }
 
-
-    private void SlowGravit() {
-        GM.SetGravityState(SLOW);
-        lastGravity = GM.Gravity;
-        GM.Gravity = lastGravity / 2;
-    }
-    
     private void PauseGame()
     {
-        GM.SetGravityState(PAUSE);
-        lastGravity = GM.Gravity;
         GM.Gravity = 0;
     }
 
     private void ResumeGame()
     {
-        GM.SetGravityState(NORMAL);
-        GM.Gravity = lastGravity;
+        GM.Gravity = 0;
     }
+  
 
 }

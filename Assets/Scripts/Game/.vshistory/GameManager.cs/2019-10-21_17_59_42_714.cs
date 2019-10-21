@@ -167,6 +167,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="STATE"></param>
     public void SetGravityState(string STATE) {
-        GravityState = STATE;
+        GravityState = STATE
     }
 }

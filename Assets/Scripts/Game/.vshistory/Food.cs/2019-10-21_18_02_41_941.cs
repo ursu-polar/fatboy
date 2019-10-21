@@ -36,23 +36,18 @@ public class Food : MonoBehaviour
     void FixedUpdate()
     {
         //GetComponent<Rigidbody2D>().gravityScale = GM.Gravity; 
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
-        print(GetComponent<Rigidbody2D>().velocity);
         switch (GM.GravityState) {
             case NORMAL:
-                
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
                 break;
 
             case PAUSE:
-                
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
                 GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 GetComponent<Rigidbody2D>().angularVelocity = 0f;
                 break;
 
             case SLOW:
-               
-                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity /2.0f;
-                GetComponent<Rigidbody2D>().angularVelocity = GetComponent<Rigidbody2D>().angularVelocity/2;
                 break;
         }
     }

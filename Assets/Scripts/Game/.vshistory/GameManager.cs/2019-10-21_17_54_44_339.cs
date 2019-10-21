@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI LevelSpeed; //Level Text (actualy gravity *10)
     public bool canSpawn = true; //Flag that will stop spawning of food items
     public float Gravity; //gravity of food. used to increase speed
-    public string GravityState; //states that the gravity could be
     //PRIVATE
     private int scor = 0; //the score
     private GlobalObject GO; //GlobalObject
@@ -29,11 +28,13 @@ public class GameManager : MonoBehaviour
     private IEnumerator IncreaseDifficultyCorotine; //Increase gravity over time
     private int increaseDifficultyDelay = 10; //will increment increase difficulty every 10 seconds
                                               //maybe not a fix value?
-    private string NORMAL = "normal";
-    private string PAUSE = "pause";
-    private string SLOW = "slow";
+
     /*********************** END OF VARIABLES ***********************/
-   
+
+    private void Awake()
+    {
+        Gravity = 1F;
+    }
     void Start()
     {
         //GlobalObject reference
@@ -45,9 +46,8 @@ public class GameManager : MonoBehaviour
         spawnerManager.StartSpawning();
         GameOverText.alpha = 0;
 
-        Gravity = 1F;
-        GravityState = NORMAL;
-
+        
+       
         DefineLevelToSpawnHash();
         IncreaseDifficulty();
     }
@@ -160,13 +160,5 @@ public class GameManager : MonoBehaviour
             }
             yield return new WaitForSeconds(increaseDifficultyDelay);
         }
-    }
-
-    /// <summary>
-    /// change the state of gravity to be used in the Food addForce falling
-    /// </summary>
-    /// <param name="STATE"></param>
-    public void SetGravityState(string STATE) {
-        GravityState = STATE;
     }
 }

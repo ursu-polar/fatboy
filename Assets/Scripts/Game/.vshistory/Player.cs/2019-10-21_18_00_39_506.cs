@@ -188,7 +188,6 @@ public class Player : MonoBehaviour
 
 
     private void SlowGravit() {
-        GM.SetGravityState(SLOW);
         lastGravity = GM.Gravity;
         GM.Gravity = lastGravity / 2;
     }
@@ -202,7 +201,6 @@ public class Player : MonoBehaviour
 
     private void ResumeGame()
     {
-        GM.SetGravityState(NORMAL);
         GM.Gravity = lastGravity;
     }
 

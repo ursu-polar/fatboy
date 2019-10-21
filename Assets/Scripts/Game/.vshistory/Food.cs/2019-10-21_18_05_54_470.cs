@@ -51,7 +51,7 @@ public class Food : MonoBehaviour
 
             case SLOW:
                
-                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity /2.0f;
+                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity.y;
                 GetComponent<Rigidbody2D>().angularVelocity = GetComponent<Rigidbody2D>().angularVelocity/2;
                 break;
         }

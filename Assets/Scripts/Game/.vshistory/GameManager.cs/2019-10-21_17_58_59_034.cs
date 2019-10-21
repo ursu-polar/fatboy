@@ -162,11 +162,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// change the state of gravity to be used in the Food addForce falling
-    /// </summary>
-    /// <param name="STATE"></param>
-    public void SetGravityState(string STATE) {
-        GravityState = STATE;
-    }
+    public void SetGravityState(string STATE) { }
 }

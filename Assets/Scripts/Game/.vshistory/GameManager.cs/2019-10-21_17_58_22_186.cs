@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
         GameOverText.alpha = 0;
 
         Gravity = 1F;
-        GravityState = NORMAL;
-
+       
         DefineLevelToSpawnHash();
         IncreaseDifficulty();
     }
@@ -160,13 +159,5 @@ public class GameManager : MonoBehaviour
             }
             yield return new WaitForSeconds(increaseDifficultyDelay);
         }
-    }
-
-    /// <summary>
-    /// change the state of gravity to be used in the Food addForce falling
-    /// </summary>
-    /// <param name="STATE"></param>
-    public void SetGravityState(string STATE) {
-        GravityState = STATE;
     }
 }

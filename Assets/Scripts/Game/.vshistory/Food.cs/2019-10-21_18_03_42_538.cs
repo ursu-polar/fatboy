@@ -37,7 +37,6 @@ public class Food : MonoBehaviour
     {
         //GetComponent<Rigidbody2D>().gravityScale = GM.Gravity; 
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
-        print(GetComponent<Rigidbody2D>().velocity);
         switch (GM.GravityState) {
             case NORMAL:
                 

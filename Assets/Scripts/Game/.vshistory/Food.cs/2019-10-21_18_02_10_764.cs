@@ -13,9 +13,9 @@ public class Food : MonoBehaviour
 
     //PRIVATE
     private GameManager GM;
-    const string NORMAL = "normal";
-    const string PAUSE = "pause";
-    const string SLOW = "slow";
+    private string NORMAL = "normal";
+    private string PAUSE = "pause";
+    private string SLOW = "slow";
     /*********************** END OF VARIABLES ***********************/
 
     void Start()
@@ -36,24 +36,21 @@ public class Food : MonoBehaviour
     void FixedUpdate()
     {
         //GetComponent<Rigidbody2D>().gravityScale = GM.Gravity; 
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
-        print(GetComponent<Rigidbody2D>().velocity);
         switch (GM.GravityState) {
             case NORMAL:
-                
                 break;
 
             case PAUSE:
-                
-                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                GetComponent<Rigidbody2D>().angularVelocity = 0f;
                 break;
 
             case SLOW:
-               
-                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity /2.0f;
-                GetComponent<Rigidbody2D>().angularVelocity = GetComponent<Rigidbody2D>().angularVelocity/2;
                 break;
+        }
+        if (GM.GravityState != 0) GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
+        else {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().angularVelocity = 0f;
         }
     }
 
