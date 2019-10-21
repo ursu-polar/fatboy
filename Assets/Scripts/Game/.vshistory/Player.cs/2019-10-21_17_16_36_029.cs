@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
         //Set a random scale factor
         scaleFactor = (float)Random.Range(1, 5) / 10;
-        //print(scaleFactor);
+        print(scaleFactor);
 
         //Depending on what it hits
         switch (other.gameObject.tag)

@@ -60,6 +60,7 @@ public class Food : MonoBehaviour
         bodyParts.Add(mouth);
         bodyParts.Add(eyes);
 
+      
         foreach (GameObject part in bodyParts)
         {
             int childrenLength = part.transform.childCount;

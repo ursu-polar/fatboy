@@ -27,11 +27,6 @@ public class Controll : MonoBehaviour
 
     /*********************** END OF VARIABLES ***********************/
 
-    private void Awake()
-    {
-        trail = GameObject.Find("particleSystem").GetComponentInChildren<ParticleSystem>();
-    }
-
     void Start()
     {
         ScreenWidth = Screen.width;
@@ -41,7 +36,7 @@ public class Controll : MonoBehaviour
         player = _player.GetComponent<Player>();
         player.GetHalfSize();
 
-       
+        trail = GameObject.Find("particleSystem").GetComponentInChildren<ParticleSystem>();
  
     }
 

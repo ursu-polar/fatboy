@@ -41,6 +41,7 @@ public class Food : MonoBehaviour
     /// </summary>
     void OnCollisionEnter2D(Collision2D other)
     {
+        print(other.gameObject.tag);
         if (other.gameObject.tag == "bottom") {
             Destroy(gameObject);
         }        
@@ -60,6 +61,7 @@ public class Food : MonoBehaviour
         bodyParts.Add(mouth);
         bodyParts.Add(eyes);
 
+      
         foreach (GameObject part in bodyParts)
         {
             int childrenLength = part.transform.childCount;

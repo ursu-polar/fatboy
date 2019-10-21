@@ -31,7 +31,6 @@ public class Controll : MonoBehaviour
     {
         trail = GameObject.Find("particleSystem").GetComponentInChildren<ParticleSystem>();
     }
-
     void Start()
     {
         ScreenWidth = Screen.width;

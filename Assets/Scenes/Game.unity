@@ -923,7 +923,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &577702363
@@ -2789,5 +2789,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4383919940269137557, guid: 6ce2bd10f9b857b4f91f02403df1f052,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 4383919940130369885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ce2bd10f9b857b4f91f02403df1f052, type: 3}
+--- !u!1 &4383919940130369885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383919940269137561, guid: 6ce2bd10f9b857b4f91f02403df1f052,
+    type: 3}
+  m_PrefabInstance: {fileID: 4383919940130369884}
+  m_PrefabAsset: {fileID: 0}
