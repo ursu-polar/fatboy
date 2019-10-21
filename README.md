@@ -84,3 +84,8 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - added Foods random faces
 - change falling implementation from Gravity to AddForce (so i could pause, slow down, rever, etc. individual Food items)
 - Grow will be inversely proportional with the size so you will die slower when getting very big
+
+
+### fatboy_1.3.4.1 & fatboy_1.3.4.2
+- fixed the lost particle trail and background breath effect
+- installed local history file management for Visual Studio
