@@ -69,3 +69,10 @@
 - Grow will be inversely proportional with the size so you will die slower when getting very big
 - NEW BUILD
 - moved versioning to VERSION file
+
+#### fatboy_1.3.4.5
+- fixed Game state Slow when Life is eaten
+- numer of spawn Foods increase with level
+- added eating and Bonus sounds
+- NEW BUILD
+- added android ico and logo splash screen (dummy)
