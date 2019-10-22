@@ -14,13 +14,12 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 ## Wishlist
 - [x] make Wishlist [done in 1.3.3]
 - [ ] sounds (for menu and for game)(make increase tempo of music with level?)
-- [x] some sounds for eating and Bonus [fatboy_1.3.4.5]
 - [ ] save highscores online, maybe highscore table, compare yourself with others
 - [ ] better UI elements
-- [x] back button will open quit/cancel dialog box [done in 1.3.2]
+- [x] back button will open quit/cancel dialog box [fatboy_1.3.2]
 - [ ] generate random look for each Food type
 - [ ] add more Food types
-- [ ] add sound effects when eating food
+- [x] add sound effects when eating food [fatboy_1.3.4.5]
 - [ ] add effects when eating food
 - [ ] UI animations
 - [ ] add someking of powerups in slots(n per game?)(ex: show when/where a Bonus food will appear like a lightnigh bolt or something)
