@@ -17,7 +17,7 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 - [ ] save highscores online, maybe highscore table, compare yourself with others
 - [ ] better UI elements
 - [x] back button will open quit/cancel dialog box [fatboy_1.3.2]
-- [ ] generate random look for each Food type
+- [x] generate random look for each Food type [fatboy_1.3.4]
 - [ ] add more Food types
 - [x] add sound effects when eating food [fatboy_1.3.4.5]
 - [ ] add effects when eating food
