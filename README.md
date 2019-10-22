@@ -29,3 +29,6 @@ For each item "eaten" you get points. There is a timer but so far it does nothin
 
 [Version history](https://github.com/ursu-polar/fatboy/blob/master/VERSION.MD)
 
+------------
+Free sounds from : https://www.zapsplat.com/
+Free graphic assets from: https://www.freepik.com
