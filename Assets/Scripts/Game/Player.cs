@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private string NORMAL = "normal";
     private string PAUSE = "pause";
     private string SLOW = "slow";
+    private string RESUME = "resume";
     /*********************** END OF VARIABLES ***********************/
 
     private void Start()
@@ -79,18 +80,23 @@ public class Player : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Enemy":
+                GM.SoundEffEat();
                 //Set a random scale factor
-                scaleFactor = (float)Random.Range(1, 3 - transform.localScale.x) / 10;
+                scaleFactor = (float)Random.Range(1, 3 - transform.localScale.x/10) / 10;
+                if (scaleFactor < 0) scaleFactor = 0.1f;
+                //print(scaleFactor);
                 EnemyHit();
                 GM.IncreaseScore(enemyPoints); 
                 break;
             case "Life":
+                GM.SoundEffEat();
                 //Set a random scale factor
                 scaleFactor = (float)Random.Range(1, 5) / 10;
                 LifeHit();
                 GM.IncreaseScore(lifePoints);
                 break;
             case "Bonus":
+                GM.SoundEffBonus();
                 //Set a random scale factor
                 scaleFactor = (float)Random.Range(1, 5) / 10;
                 BonusHit();
@@ -160,6 +166,7 @@ public class Player : MonoBehaviour
             scaleX = transform.localScale.x / 2;
             scaleY = transform.localScale.y / 2;
         }
+
         transform.DOScale(new Vector3(scaleX, scaleY), scaleSpeed)
             .OnUpdate(() =>
             {
@@ -208,8 +215,8 @@ public class Player : MonoBehaviour
 
     private void ResumeGame()
     {
-        GM.SetGravityState(NORMAL);
         GM.Gravity = lastGravity;
+        GM.SetGravityState(RESUME);        
     }
 
 }

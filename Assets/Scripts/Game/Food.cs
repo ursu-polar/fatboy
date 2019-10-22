@@ -16,6 +16,8 @@ public class Food : MonoBehaviour
     const string NORMAL = "normal";
     const string PAUSE = "pause";
     const string SLOW = "slow";
+    const string RESUME = "resume";
+    private Vector2 lastVelocity;
     /*********************** END OF VARIABLES ***********************/
 
     void Start()
@@ -37,10 +39,16 @@ public class Food : MonoBehaviour
     {
         //GetComponent<Rigidbody2D>().gravityScale = GM.Gravity; 
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -GM.Gravity));
-        print(GetComponent<Rigidbody2D>().velocity);
+
         switch (GM.GravityState) {
             case NORMAL:
                 
+                break;
+
+            case RESUME:
+                GetComponent<Rigidbody2D>().velocity = lastVelocity;
+                lastVelocity = Vector2.zero;
+                GM.SetGravityState(NORMAL);
                 break;
 
             case PAUSE:
@@ -50,9 +58,9 @@ public class Food : MonoBehaviour
                 break;
 
             case SLOW:
-               
-                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity /2.0f;
-                GetComponent<Rigidbody2D>().angularVelocity = GetComponent<Rigidbody2D>().angularVelocity/2;
+                if(lastVelocity == Vector2.zero) lastVelocity = GetComponent<Rigidbody2D>().velocity;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0f,-1.75f);
+                GetComponent<Rigidbody2D>().angularVelocity = 0.5f;
                 break;
         }
     }

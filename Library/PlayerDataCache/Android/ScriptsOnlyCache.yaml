@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioScript
     - BgCloudsBreath
     - Controll
     - Food
@@ -31,7 +32,6 @@ ScriptsOnlyBuild:
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -59,42 +59,48 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9764}
+      Script: {instanceID: 9686}
     - Class: 114
-      Script: {instanceID: 9974}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10120}
+      Script: {instanceID: 10042}
     - Class: 114
-      Script: {instanceID: 10340}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10380}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 10448}
+      Script: {instanceID: 10370}
     - Class: 114
-      Script: {instanceID: 10688}
+      Script: {instanceID: 10610}
     - Class: 114
-      Script: {instanceID: 10770}
+      Script: {instanceID: 10692}
     - Class: 114
-      Script: {instanceID: 10772}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 10996}
+      Script: {instanceID: 10918}
     - Class: 114
-      Script: {instanceID: 11182}
+      Script: {instanceID: 11020}
     - Class: 114
-      Script: {instanceID: 11190}
+      Script: {instanceID: 11106}
     - Class: 114
-      Script: {instanceID: 11248}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 11254}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11574}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11498}
+    - Class: 114
+      Script: {instanceID: 11554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -133,25 +139,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9764}
+      Script: {instanceID: 9686}
     - Class: 114
-      Script: {instanceID: 9974}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10572}
+      Script: {instanceID: 10494}
     - Class: 114
-      Script: {instanceID: 10770}
+      Script: {instanceID: 10692}
     - Class: 114
-      Script: {instanceID: 10940}
+      Script: {instanceID: 10862}
     - Class: 114
-      Script: {instanceID: 10996}
+      Script: {instanceID: 10918}
     - Class: 114
-      Script: {instanceID: 11190}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 11254}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,35 +200,35 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9764}
+      Script: {instanceID: 9686}
     - Class: 114
-      Script: {instanceID: 9974}
+      Script: {instanceID: 9896}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10400}
+      Script: {instanceID: 10322}
     - Class: 114
-      Script: {instanceID: 10670}
+      Script: {instanceID: 10592}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10674}
     - Class: 114
-      Script: {instanceID: 10760}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 10770}
+      Script: {instanceID: 10692}
+    - Class: 114
+      Script: {instanceID: 10918}
+    - Class: 114
+      Script: {instanceID: 10932}
     - Class: 114
       Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 11010}
+      Script: {instanceID: 11114}
     - Class: 114
-      Script: {instanceID: 11074}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11190}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11254}
-    - Class: 114
-      Script: {instanceID: 11422}
-    - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -608,6 +614,12 @@ ScriptsOnlyBuild:
     className: GlobalObject
   - hash:
       serializedVersion: 2
+      Hash: 461abb661b21460fc211d1a324895429
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioScript
+  - hash:
+      serializedVersion: 2
       Hash: cd49b1503010596ab22eac929ed90407
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -626,7 +638,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 67a56e36f09802dd57b1625aaf5504e0
+      Hash: 38cfa53cb252d47f4f0d3e5e20e60450
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -761,4 +773,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: D:/ionut/GITHUB/fatboy_game/fatboy_builds/fatboy_1.3.3.4.apk
+  playerPath: D:/ionut/GITHUB/fatboy_game/fatboy_builds/fatboy_1.3.4.5.apk

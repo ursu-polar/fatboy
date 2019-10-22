@@ -43,24 +43,32 @@ public class SpawnManager : MonoBehaviour
        
         while (GM.canSpawn)
         {
-            //print(0.8 - spawnInterval/10);
-            //%30 percent chance (1 - 0.7 is 0.3)
-            //Rethink this!
-            if (Random.value > (0.9 - spawnInterval/10)) {
-                if (Random.value > 0.95) {
-                    newSpawn = GameObject.Instantiate(bonus);
-                    newSpawn.transform.position = new Vector3(GenerateRandomStartPositionX(), spawnLocationY, 0f);
+            print(GM.numberOfSpawns);
+            for (int i = 0; i < GM.numberOfSpawns; i++)
+            {
+                //print(0.8 - spawnInterval/10);
+                //%30 percent chance (1 - 0.7 is 0.3)
+                //Rethink this!
+                if (Random.value > (0.9 - spawnInterval / 10))
+                {
+                    if (Random.value > 0.95)
+                    {
+                        newSpawn = GameObject.Instantiate(bonus);
+                        newSpawn.transform.position = new Vector3(GenerateRandomStartPositionX(), spawnLocationY, 0f);
+                    }
+                    else
+                    {
+                        newSpawn = GameObject.Instantiate(life);
+                        newSpawn.transform.position = new Vector3(GenerateRandomStartPositionX(), spawnLocationY, 0f);
+                    }
                 }
                 else
                 {
-                    newSpawn = GameObject.Instantiate(life);
+                    newSpawn = GameObject.Instantiate(enemy);
                     newSpawn.transform.position = new Vector3(GenerateRandomStartPositionX(), spawnLocationY, 0f);
                 }
-            } else
-            {
-                newSpawn = GameObject.Instantiate(enemy);
-                newSpawn.transform.position = new Vector3(GenerateRandomStartPositionX(), spawnLocationY, 0f);
             }
+           
             yield return new WaitForSeconds(spawnInterval);
         }
     }

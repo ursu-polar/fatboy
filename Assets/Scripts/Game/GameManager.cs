@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public bool canSpawn = true; //Flag that will stop spawning of food items
     public float Gravity; //gravity of food. used to increase speed
     public string GravityState; //states that the gravity could be
+    public int numberOfSpawns = 1; //number of simultaneous spawned food items
+    public AudioScript AUDIO;
     //PRIVATE
     private int scor = 0; //the score
     private GlobalObject GO; //GlobalObject
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     private float gravitySpeedIncrement = 0.05F; //it will be added to Gravity so the food will fall faster
     private Hashtable levelToSpawnTable; //keep the correlation betwen the level and the spawn delay
-
+    private Hashtable numberOfSpawnsPerLevel; //correlation betwen the level and number of spawn elements
     private IEnumerator GameOverDelayCorotine; //Adds a delay before changing sceene to GameOver
     private IEnumerator IncreaseDifficultyCorotine; //Increase gravity over time
     private int increaseDifficultyDelay = 10; //will increment increase difficulty every 10 seconds
@@ -32,8 +34,9 @@ public class GameManager : MonoBehaviour
     private string NORMAL = "normal";
     private string PAUSE = "pause";
     private string SLOW = "slow";
+    private string RESUME = "resume";
     /*********************** END OF VARIABLES ***********************/
-   
+
     void Start()
     {
         //GlobalObject reference
@@ -129,6 +132,13 @@ public class GameManager : MonoBehaviour
             {"25", 0.2f },
             {"26", 0.1f },
         };
+
+        numberOfSpawnsPerLevel = new Hashtable(){      
+            {"9", 2 },
+            {"16", 3 },
+            {"20", 4 },
+            {"26", 5 }
+        };
     }
 
     /// <summary>
@@ -155,9 +165,14 @@ public class GameManager : MonoBehaviour
 
             //increase spawn rate
             if (levelToSpawnTable.Contains(_level)) {
-                print("Spawn Speed: " +levelToSpawnTable[_level]);
+                //print("Spawn Speed: " +levelToSpawnTable[_level]);
                 spawnerManager.SetSpawnInterval((float)levelToSpawnTable[_level]);
             }
+
+            if (numberOfSpawnsPerLevel.Contains(_level)){
+                numberOfSpawns = (int)numberOfSpawnsPerLevel[_level];
+            }
+
             yield return new WaitForSeconds(increaseDifficultyDelay);
         }
     }
@@ -165,8 +180,11 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// change the state of gravity to be used in the Food addForce falling
     /// </summary>
-    /// <param name="STATE"></param>
+    /// <param name="STATE">NORMAL,PAUSE,SLOW,RESUME</param>
     public void SetGravityState(string STATE) {
         GravityState = STATE;
     }
+
+    public void SoundEffEat() { AUDIO.AudioEat(); }
+    public void SoundEffBonus() { AUDIO.AudioBonus(); }
 }
